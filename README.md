@@ -1,4 +1,6 @@
-# caddy-cloudflare
+# caddy-cf
+
+[![Docker Image](https://img.shields.io/badge/ghcr.io-caddy--cf-blue?logo=docker&logoColor=white)](https://github.com/StelianMorariu/caddy-cf/pkgs/container/caddy-cf) [![GitHub tag](https://img.shields.io/github/v/tag/StelianMorariu/caddy-cf)](https://github.com/StelianMorariu/caddy-cf/tags) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 A custom [Caddy](https://caddyserver.com/) build with the [Cloudflare DNS plugin](https://github.com/caddy-dns/cloudflare) pre-installed, for use in a homelab. The image is built automatically via GitHub Actions and published to the GitHub Container Registry (GHCR).
 
@@ -36,7 +38,7 @@ curl https://proxy.golang.org/github.com/caddy-dns/cloudflare/@latest
 Pull the image from GHCR:
 
 ```bash
-docker pull ghcr.io/<owner>/caddy-cloudflare:latest
+docker pull ghcr.io/stelianmorariu/caddy-cf:latest
 ```
 
 Reference it in your `docker-compose.yml`:
@@ -44,7 +46,7 @@ Reference it in your `docker-compose.yml`:
 ```yaml
 services:
   caddy:
-    image: ghcr.io/<owner>/caddy-cloudflare:latest
+    image: ghcr.io/stelianmorariu/caddy-cf:latest
     restart: unless-stopped
     ports:
       - "80:80"
